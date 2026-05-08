@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url("Cutiee.jpeg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+
+.container {
+    background: rgba(0,0,0,0.75);
+    padding: 30px;
+    border-radius: 18px;
+    max-width: 550px;
+    width: 90%;
+
+    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.letter {
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 1.05em;
+}
+
+.small {
+    font-size: 0.9em;
+    opacity: 0.85;
+    margin-top: 10px;
+}
+
+.photo-strip {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px 10px 30px;
+    width: 180px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+    transform: rotate(-2deg);
+    transition: 0.3s;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.polaroid img {
+    width: 100%;
+    filter: grayscale(100%);
+}
+
+.polaroid p {
+    color: black;
+    font-size: 0.8em;
+    margin-top: 8px;
+    font-family: "Courier New", monospace;
+}
+
+.polaroid:hover {
+    transform: scale(1.07) rotate(0deg);
+}
+
+.music {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cute-button {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 8px;
+
+    /* For animation */
+    transform: scale(1);
+}
+
+.cute-button:hover {
+    background: black;
+    color: white;
+    border: 2px solid white;
+    animation: pop 0.3s ease forwards;
+}
+
+/* POP / wiggle effect */
+@keyframes pop {
+    0%   { transform: scale(1) rotate(0deg); }
+    25%  { transform: scale(1.1) rotate(-5deg); }
+    50%  { transform: scale(1.15) rotate(5deg); }
+    75%  { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
